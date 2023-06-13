@@ -26,7 +26,7 @@ Before running the project, you need to have the following installed:
 
 ### Installing
 
-1. Clone the repository: `git clone https://github.com/<username>/raketech-review-app.git`
+1. Clone the repository: `git clone https://github.com/requiemcreatif/raketech-review-v1.git`
 2. Navigate into the project directory: `cd raketech-review-app`
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm run dev`
