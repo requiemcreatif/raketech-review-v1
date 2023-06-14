@@ -24,7 +24,9 @@ export default async function handler(
   try {
     // Fetch reviews from the API
     const response = await axios.get(process.env.NEXT_PUBLIC_WORDPRESS_API_URL || '');
-    // const response = await axios.get("http://localhost:8888/raketech/wp-content/plugins/data.json" || '');
+
+
+
 
 
     const reviews: Review[] = response.data.toplists['575'];
