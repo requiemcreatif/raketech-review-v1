@@ -3,6 +3,7 @@ import React, { useState, useEffect, FC } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import ReviewCard from '../components/ReviewCard';
+import Modal from '../components/Modal';
 
 
 
@@ -84,6 +85,9 @@ const Reviews: FC = () => {
                     Load Less
                 </button>
             </div>
+            <Modal show={isModalOpen} handleClose={() => setIsModalOpen(false)}>
+                <h2 className="text-2xl font-bold mb-4">All brands have been loaded.</h2>
+            </Modal>
             </div>
         </div>
 
