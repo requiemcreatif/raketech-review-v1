@@ -25,15 +25,11 @@ export default async function handler(
     // Fetch reviews from the API
     const response = await axios.get(process.env.NEXT_PUBLIC_WORDPRESS_API_URL || '');
 
-
-
-
-
     const reviews: Review[] = response.data.toplists['575'];
-console.log(reviews)
+
     // Sort the reviews by position
     reviews.sort((a: Review, b: Review) => a.position - b.position);
-    console.log(reviews)
+
     res.status(200).json(reviews);
   } catch (error) {
     console.error('Error fetching reviews:', error);
