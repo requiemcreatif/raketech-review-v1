@@ -13,14 +13,25 @@ type Review = {
     play_url: string
 }
 
+type ErrorResponse = {
+  error: string;
+};
+
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Review[]>
+  res: NextApiResponse<Review[] | ErrorResponse>
 ) {
-  // Fetch reviews from the api
-  const response = await axios.get('http://localhost:8888/raketech/wp-content/plugins/data.json');
-  const { toplists: { "575": reviews } } = response.data;
-  reviews.sort((a: Review, b: Review) => a.position - b.position); // Order by position
+  try {
+    // Fetch reviews from the API
+    const response = await axios.get('http://localhost:8888/raketech/wp-content/plugins/data.json');
+    const reviews: Review[] = response.data.toplists['575'];
 
-  res.status(200).json(reviews);
+    // Sort the reviews by position
+    reviews.sort((a: Review, b: Review) => a.position - b.position);
+
+    res.status(200).json(reviews);
+  } catch (error) {
+    console.error('Error fetching reviews:', error);
+    res.status(500).json({ error: 'Failed to fetch reviews' });
+  }
 }
