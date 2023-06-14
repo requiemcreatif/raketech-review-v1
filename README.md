@@ -9,7 +9,8 @@ This project is a React application built with Next.js, TypeScript, and Tailwind
 - Each review includes an image, rating, features, terms and conditions, and a 'PLAY NOW' button
 - A "Load More" and "Load Less" button are implemented, which adds 3 more brands to the list upon clicking
 - Notifies users when all brands have been loaded
-
+- Wordpress hosted on 000webhostapp.com [000webhostapp](https://www.000webhost.com)
+- The app is deployed using [Vercel](https://vercel.com)
 ## Getting Started
 
 Before running the project, you need to have the following installed:
@@ -32,6 +33,7 @@ Before running the project, you need to have the following installed:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Axios](https://axios-http.com/)
+- [Js-cookies](github.com/js-cookie/js-cookie)
 
 ## Authors
 

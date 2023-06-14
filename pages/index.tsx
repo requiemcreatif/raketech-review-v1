@@ -1,4 +1,4 @@
-"use client";
+
 import React, { useState, useEffect, FC } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
@@ -26,6 +26,7 @@ const Reviews: FC = () => {
     const [loadMoreCount, setLoadMoreCount] = useState(Number(Cookies.get('loadMoreCount')) || 1);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    // Fetch reviews from the API
     useEffect(() => {
         const fetchReviews = async (): Promise<void> => {
             try {
@@ -39,6 +40,7 @@ const Reviews: FC = () => {
         fetchReviews();
     }, []);
 
+    // Update the display reviews when the load more count changes
     useEffect(() => {
         const updateDisplayReviews = (): void => {
             setDisplayReviews(reviews.slice(0, 3 * loadMoreCount));
@@ -52,6 +54,7 @@ const Reviews: FC = () => {
         saveLoadMoreCountToCookie();
     }, [reviews, loadMoreCount]);
 
+    // Handle the load more button click
     const handleLoadMore = (): void => {
         if (displayReviews.length >= reviews.length) {
             setIsModalOpen(true);
@@ -60,6 +63,7 @@ const Reviews: FC = () => {
         }
     };
 
+    // Handle the load less button click
     const handleLoadLess = (): void => {
         if (loadMoreCount > 1) {
             setLoadMoreCount(prevCount => prevCount - 1);

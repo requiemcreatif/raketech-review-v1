@@ -1,8 +1,6 @@
-// ReviewCard.tsx
 import React, { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
 // import react icons
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { BsStarFill, BsStar } from 'react-icons/bs';
@@ -23,7 +21,10 @@ type ReviewCardProps = {
     review: Review
 }
 
-// This function is to extract the url from the terms and conditions html
+// This function extracts the url from the terms and conditions html
+// to refactor : "terms_and_conditions": "21+ | <a href=\"https://generator.lorem-ipsum.info/terms-and-conditions\">T&CS Apply</a> | Gamble Responsibly",
+// to : "https://generator.lorem-ipsum.info/terms-and-conditions"
+
 function extractUrl(html: string): string {
     const regex = /href="([^"]*)"/;
     const match = html.match(regex);
@@ -35,6 +36,10 @@ const Star: FC<{ filled: boolean }> = ({ filled }) => {
 };
 
 const ReviewCard: FC<ReviewCardProps> = ({ review }) => {
+    if (!review) {
+        return <p>No review data available.</p>
+    }
+
     const termsUrl = extractUrl(review.terms_and_conditions);
 
     return (
