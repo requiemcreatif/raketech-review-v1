@@ -2,6 +2,7 @@
 import React, { useState, useEffect, FC } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import ReviewCard from '../components/ReviewCard';
 
 
 
@@ -65,7 +66,10 @@ const Reviews: FC = () => {
 
     return (
         <div className=' p-7 max-w-6xl mx-auto'>
-            
+            <div>
+            {displayReviews.map(review => (
+                <ReviewCard key={review.brand_id} review={review} />
+            ))}
             <div className='flex gap-5 justify-center items-center mt-10 mb-10'>
                 <button 
                     onClick={handleLoadMore} 
@@ -80,7 +84,7 @@ const Reviews: FC = () => {
                     Load Less
                 </button>
             </div>
-
+            </div>
         </div>
 
     );
