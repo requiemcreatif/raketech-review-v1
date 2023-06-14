@@ -4,6 +4,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import ReviewCard from '../components/ReviewCard';
 import Modal from '../components/Modal';
+import Header from '../components/Header';
 
 
 
@@ -67,6 +68,7 @@ const Reviews: FC = () => {
 
     return (
         <div className=' p-7 max-w-6xl mx-auto'>
+            <Header />
             <div>
             {displayReviews.map(review => (
                 <ReviewCard key={review.brand_id} review={review} />
