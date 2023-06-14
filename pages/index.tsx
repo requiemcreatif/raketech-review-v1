@@ -1,4 +1,4 @@
-// Reviews.tsx
+"use client";
 import React, { useState, useEffect, FC } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
