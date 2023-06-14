@@ -2,7 +2,7 @@
 
 This project is a React application built with Next.js, TypeScript, and Tailwind CSS. It fetches data from a local WordPress REST API and displays reviews. The app is responsive and suitable for mobile and desktop. The application is focused on providing detailed reviews of different brands, with a "Load More" functionality.
 
-![alt text](.public/images/raketech.png)
+![alt text](public/images/raketech.png)
 
 
 ## Features
