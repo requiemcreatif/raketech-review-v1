@@ -1,14 +1,17 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import React, { useEffect, useState } from 'react';
+
+
 
 export default function Home() {
+
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      
-    </main>
+    <div className=' p-7 max-w-6xl mx-auto'>
+      <h1>
+        Raketech Reviews
+      </h1>
+     
+    </div>
   )
 }
